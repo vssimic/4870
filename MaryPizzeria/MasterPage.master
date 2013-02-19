@@ -9,20 +9,18 @@
     </asp:ContentPlaceHolder>
 </head>
 <body style="background-color: #e4d1b8">
-    <form id="form1" runat="server">
     <div style="background-color: #e4d1b8; width: 1028px; height: 768px; margin:auto; opacity: .8">
         <div id="header" style="width: auto; height: 120px; background-image:url(/images/banner.jpg); margin: auto">
             <div id="buttons" style="width: auto; padding-top: 11px;">
-                <asp:ImageButton ID="ibOrders" runat="server" ImageUrl="~/images/orders.jpg" style="float: right"/>
+                <a href="Orders.aspx" style="float: right;">
+                    <img src="images/orders.jpg"/>
+                </a>
             </div>
             
         </div>
-        <div id="content" style="margin-top: 5px; background-color: CaptionText; width: 1008px; height: 768px; padding:10px;">
             <asp:ContentPlaceHolder ID="cphContent" runat="server">
 
             </asp:ContentPlaceHolder>
         </div>
-    </div>
-    </form>
 </body>
 </html>
