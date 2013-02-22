@@ -1,0 +1,11 @@
+﻿body {
+}
+
+.lbl {
+color: white;
+}
+
+.err {
+    color: red;
+    font-style:italic;
+}
