@@ -10,10 +10,10 @@
 </head>
 <body style="background-color: #e4d1b8">
     <div style="background-color: #e4d1b8; width: 1028px; height: 768px; margin:auto; opacity: .8">
-        <div id="header" style="width: auto; height: 120px; background-image: url(images/banner.jpg); margin: auto">
+        <div id="header" style="width: auto; height: 120px; background-image: url(/MaryPizzeria/images/banner.jpg); margin: auto">
             <div id="buttons" style="width: auto; padding-top: 11px;">
-                <a href="Orders.aspx" style="float: right;">
-                    <img src="images/orders.jpg"/>
+                <a href="/MaryPizzeria/Orders.aspx" style="float: right;">
+                    <img src="/MaryPizzeria/images/orders.jpg"/>
                 </a>
             </div>
             

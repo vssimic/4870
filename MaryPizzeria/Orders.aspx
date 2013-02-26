@@ -1,8 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Orders.aspx.cs" Inherits="Orders" %>
 
-<%@ Register TagPrefix="CustomValidators" Namespace="CustomValidators"
-    Assembly="App_Code/Validator.dll" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContent" runat="Server">
@@ -79,9 +76,6 @@
                     <asp:TableCell>
                         <%--<asp:ListBox ID="lbToppings" runat="server" SelectionMode="Multiple" Height="100px"></asp:ListBox>--%>
                         <asp:CheckBoxList ID="lbToppings" runat="server" RepeatColumns="2" CssClass="lbl"></asp:CheckBoxList>
-                        <CustomValidators:RequiredFieldValidatorForCheckBoxLists
-                            ID="reqCBList" runat="server" ControlToValidate="lbToppings"
-                            ErrorMessage="Please select at least one checkbox..." />
                     </asp:TableCell>
                 </asp:TableRow>
 
@@ -90,10 +84,10 @@
                         <asp:Label ID="lblDelivery" runat="server" Text="Pickup or Delivery: " CssClass="lbl"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:RadioButton ID="rbDelivery" runat="server" GroupName="Delivery" />
-                        <asp:Label ID="lblrbDelivery" runat="server" Text="Delivery" CssClass="lbl"></asp:Label>
-                        <asp:RadioButton ID="rbPickup" runat="server" GroupName="Delivery" />
+                        <asp:RadioButton ID="rbPickup" runat="server" GroupName="Delivery" Checked="true"/>
                         <asp:Label ID="lblrbPickup" runat="server" Text="Pickup" CssClass="lbl"></asp:Label>
+                        <asp:RadioButton ID="rbDelivery" runat="server" GroupName="Delivery" />
+                        <asp:Label ID="lblrbDelivery" runat="server" Text="Delivery" CssClass="lbl"></asp:Label>            
                     </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>

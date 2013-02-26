@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using EntityClassLibrary;
 
 public partial class Orders : System.Web.UI.Page
 {
