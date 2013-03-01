@@ -11,11 +11,17 @@
 <body id="masterBody">
     <div id="container">
         <div id="loginLink">
-            <a id="loginA" href="/MaryPizzeria/Login.aspx" style="margin: 0;">Login</a>
+<%--            <a id="loginA" href="/MaryPizzeria/Login.aspx" style="margin: 0;">Login</a>--%>
+            <form runat="server">
+                <asp:LoginStatus ID="LoginStatus" runat="server" />
+            </form>         
         </div>
         <div id="header">
             <div id="buttons">
-                 <a id="btnToppings" href="Admin/Toppings.aspx">
+                <a id="btnReports" href="/MaryPizzeria/Sales/Reports.aspx">
+                    <asp:Image ImageUrl="~/images/reports.png" runat="server" BorderStyle="None" ID="imgReports"/>
+                </a>
+                 <a id="btnToppings" href="/MaryPizzeria/Admin/Toppings.aspx">
                     <asp:Image ImageUrl="~/images/toppingsEdit.png" runat="server" BorderStyle="None" ID="imgToppingsEdit"/>
                 </a>
                 <a id="btnOrder" href="/MaryPizzeria/Orders.aspx">

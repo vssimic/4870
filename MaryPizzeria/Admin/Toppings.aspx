@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContent" Runat="Server">
     <form id="form1" runat="server">
     <div id="contentToppings">
-        <asp:GridView ID="gvToppings" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="toppingId" DataSourceID="edsToppings" ForeColor="Black" GridLines="Horizontal">
+        <asp:GridView ID="gvToppings" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="toppingId" DataSourceID="edsToppings" ForeColor="Black" GridLines="Horizontal" AllowPaging="True" Height="20" PageSize="20">
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                 <asp:BoundField DataField="toppingId" HeaderText="toppingId" ReadOnly="True" SortExpression="toppingId" />
