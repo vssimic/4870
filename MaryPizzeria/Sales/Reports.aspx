@@ -10,10 +10,10 @@
                 <asp:Calendar ID="calendarStart" runat="server"></asp:Calendar>
                 <asp:Label ID="lblCalendarEnd" runat="server" Text="End Date: "></asp:Label>
                 <asp:Calendar ID="calendarEnd" runat="server"></asp:Calendar>
-                <asp:Button ID="btnGetReport" runat="server" Text="Submit" />
+                <asp:Button ID="btnGetReport" runat="server" Text="Submit" OnClick="btnGetReport_Click" />
             </div>
             <div style="">
-                something
+                <asp:GridView ID="gvReports" runat="server"></asp:GridView>
             </div>
         </div>
 

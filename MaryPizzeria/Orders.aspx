@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContent" runat="Server">
-    <div id="contentOrders" style="">
+    <div id="contentOrders">
         <form runat="server">
             <asp:Table runat="server">
                 <asp:TableRow>
@@ -75,7 +75,7 @@
                         <asp:Label ID="lblToppings" runat="server" Text="Toppings: " CssClass="lbl"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:CheckBoxList ID="lbToppings" runat="server" RepeatColumns="2" CssClass="lbl"></asp:CheckBoxList>
+                        <asp:CheckBoxList ID="lbToppings" runat="server" RepeatColumns="8" CssClass="lbl"></asp:CheckBoxList>
                         <asp:CustomValidator ID="cvToppings" runat="server" ErrorMessage="Must Select atleast one Topping!" OnServerValidate="cvToppings_ServerValidate" CssClass="err" Display="Dynamic"></asp:CustomValidator>
                     </asp:TableCell>
                 </asp:TableRow>
