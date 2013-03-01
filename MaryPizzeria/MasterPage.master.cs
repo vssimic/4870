@@ -9,9 +9,15 @@ public partial class MasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (HttpContext.Current.User.IsInRole("Admin"))
+        {
+            imgToppingsEdit.Visible = true;
+        }
+        else
+        {
+            imgToppingsEdit.Visible = false;
+        }
         img = this.TemplateSourceDirectory + "/images/banner.jpg";
-
     }
 
     protected string img = string.Empty;

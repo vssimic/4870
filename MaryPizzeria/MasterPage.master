@@ -1,26 +1,37 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
 <!DOCTYPE html>
-<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="/MaryPizzeria/style.css" rel="stylesheet" type="text/css" />
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <asp:ContentPlaceHolder id="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body style="background-color: #e4d1b8">
-    <div style="background-color: #e4d1b8; width: 1028px; height: 768px; margin:auto; opacity: .8">
-        <div id="header" style="width: auto; height: 120px; background-image: url(/MaryPizzeria/images/banner.jpg); margin: auto">
-            <div id="buttons" style="width: auto; padding-top: 11px;">
-                <a href="/MaryPizzeria/Orders.aspx" style="float: right;">
-                    <img src="/MaryPizzeria/images/orders.jpg"/>
+<body id="masterBody">
+    <div id="container">
+        <div id="loginLink">
+            <a id="loginA" href="/MaryPizzeria/Login.aspx" style="margin: 0;">Login</a>
+        </div>
+        <div id="header">
+            <div id="buttons">
+                 <a id="btnToppings" href="Admin/Toppings.aspx">
+                    <asp:Image ImageUrl="~/images/toppingsEdit.png" runat="server" BorderStyle="None" ID="imgToppingsEdit"/>
+                </a>
+                <a id="btnOrder" href="/MaryPizzeria/Orders.aspx">
+                    <asp:Image ImageUrl="~/images/orders.jpg" runat="server" BorderStyle="None" ID="imgOrders"/>
                 </a>
             </div>
-            
+            <div id="homeButton" style="width: 100px; height: 100px">
+                <a id="btnHome" href="/MaryPizzeria/Default.aspx">
+                    <asp:Image ImageUrl="~/images/logo.jpg" runat="server" BorderStyle="None" ID="imgLogo" style ="margin-left: 38px; margin-top: 11px;"/>
+                </a>
+            </div>
         </div>
-            <asp:ContentPlaceHolder ID="cphContent" runat="server">
-
-            </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="cphContent" runat="server">
+        </asp:ContentPlaceHolder>
+        <div id="masterFooter" style="clear: both; width: 1028px; height: 25px; background-color: CaptionText; margin-top: 5px; opacity: .8;">
         </div>
+    </div>
 </body>
 </html>

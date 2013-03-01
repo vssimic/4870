@@ -1,0 +1,8 @@
+C:\Users\Jitin\Documents\GitHub\4870\MaryPizzeria\EntityClassLibrary\bin\Debug\EntityClassLibrary.dll.config
+C:\Users\Jitin\Documents\GitHub\4870\MaryPizzeria\EntityClassLibrary\bin\Debug\EntityClassLibrary.dll
+C:\Users\Jitin\Documents\GitHub\4870\MaryPizzeria\EntityClassLibrary\bin\Debug\EntityClassLibrary.pdb
+C:\Users\Jitin\Documents\GitHub\4870\MaryPizzeria\EntityClassLibrary\bin\Debug\EntityFramework.dll
+C:\Users\Jitin\Documents\GitHub\4870\MaryPizzeria\EntityClassLibrary\bin\Debug\EntityFramework.xml
+C:\Users\Jitin\Documents\GitHub\4870\MaryPizzeria\EntityClassLibrary\obj\Debug\EntityClassLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Jitin\Documents\GitHub\4870\MaryPizzeria\EntityClassLibrary\obj\Debug\EntityClassLibrary.dll
+C:\Users\Jitin\Documents\GitHub\4870\MaryPizzeria\EntityClassLibrary\obj\Debug\EntityClassLibrary.pdb

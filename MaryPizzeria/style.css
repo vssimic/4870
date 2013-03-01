@@ -1,6 +1,4 @@
-﻿body {
-}
-
+﻿
 .lbl {
 color: white;
 }
@@ -8,4 +6,70 @@ color: white;
 .err {
     color: red;
     font-style:italic;
+}
+
+#btnLogo {
+    padding-left: 40px;
+}
+
+#masterBody {
+    background-color: #e4d1b8;
+    height: 100%;
+}
+
+#header {
+    width: auto; 
+    height: 120px; 
+    background-image: url(/MaryPizzeria/images/banner.jpg); 
+    margin: auto
+}
+
+#buttons {
+    width: auto; 
+    padding-top: 11px;
+    float: right;
+}
+
+#rbuttons {
+    width: 200px;
+}
+
+#container {
+    background-color: #e4d1b8; 
+    width: 1028px; 
+    height: 768px; 
+    margin:auto; 
+
+}
+
+#contentHome {
+    margin-top: 5px; 
+    background-color: CaptionText; 
+    width: 1008px; 
+    height: 800px; 
+    padding:10px;
+    opacity: .8;
+}
+
+#imgContainer {
+    margin: auto; 
+    width: 950px;
+}
+
+#contentOrders {
+    margin-top: 5px; 
+    background-color: CaptionText; 
+    width: 1008px; 
+    height: 460px; 
+    padding: 10px;
+    opacity: .8;
+}
+
+#contentToppings {
+    margin-top: 5px; 
+    background-color: CaptionText; 
+    width: 1008px; 
+    height: 600px; 
+    padding: 10px;
+    opacity: .8;
 }

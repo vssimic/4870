@@ -3,12 +3,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContent" runat="Server">
-    <div id="content" style="margin-top: 5px; background-color: CaptionText; width: 1008px; height: 800px; padding: 10px;">
+    <div id="contentOrders" style="">
         <form runat="server">
             <asp:Table runat="server">
                 <asp:TableRow>
                     <asp:TableCell>
-                        <asp:Label ID="lblFirst" runat="server" Text="First Name: " CssClass="lbl"></asp:Label>
+                        <asp:Label ID="lblFirst" runat="server" Text="First Name: " CssClass="lbl" ></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
                         <asp:TextBox ID="tbFirst" runat="server"></asp:TextBox>
@@ -51,10 +51,10 @@
                         <asp:Label ID="lblSize" runat="server" Text="Pizza Size: " CssClass="lbl"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:DropDownList ID="ddlSize" runat="server">
-                            <asp:ListItem>Small</asp:ListItem>
-                            <asp:ListItem>Medium</asp:ListItem>
-                            <asp:ListItem>Large</asp:ListItem>
+                        <asp:DropDownList ID="ddlSize" runat="server" OnSelectedIndexChanged="sizeSelected"  AutoPostBack="true">
+                            <asp:ListItem Value="Small">Small</asp:ListItem>
+                            <asp:ListItem Value="Medium" Selected="True">Medium</asp:ListItem>
+                            <asp:ListItem Value="Large">Large</asp:ListItem>
                         </asp:DropDownList>
                     </asp:TableCell>
                 </asp:TableRow>
@@ -65,7 +65,8 @@
                     </asp:TableCell>
                     <asp:TableCell>
                         <asp:TextBox ID="tbQuantity" runat="server" TextMode="Number"></asp:TextBox>
-
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Required!" ControlToValidate="tbQuantity" CssClass="err"></asp:RequiredFieldValidator>
+                        <asp:RangeValidator ID="rvQuantity" runat="server" ErrorMessage="Must enter a valid Quantity" MinimumValue="1" MaximumValue="99" ControlToValidate="tbQuantity" CssClass="err"></asp:RangeValidator>
                     </asp:TableCell>
                 </asp:TableRow>
 
@@ -74,8 +75,8 @@
                         <asp:Label ID="lblToppings" runat="server" Text="Toppings: " CssClass="lbl"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <%--<asp:ListBox ID="lbToppings" runat="server" SelectionMode="Multiple" Height="100px"></asp:ListBox>--%>
                         <asp:CheckBoxList ID="lbToppings" runat="server" RepeatColumns="2" CssClass="lbl"></asp:CheckBoxList>
+                        <asp:CustomValidator ID="cvToppings" runat="server" ErrorMessage="Must Select atleast one Topping!" OnServerValidate="cvToppings_ServerValidate" CssClass="err" Display="Dynamic"></asp:CustomValidator>
                     </asp:TableCell>
                 </asp:TableRow>
 
@@ -91,7 +92,7 @@
                     </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
-            <asp:Button ID="btnOrder" runat="server" Text="Submit Order" OnClick="btnOrder_Click" />
+            <asp:Button ID="btnOrder" runat="server" Text="Submit Order" OnClick="btnOrder_Click"/>
         </form>
     </div>
 </asp:Content>

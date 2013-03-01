@@ -34,6 +34,7 @@ public partial class Orders : System.Web.UI.Page
             {
                 Topping topping = new Topping();
                 topping.toppingId = Int32.Parse(item.Value);
+                topping.active = "yes";
                 selectedToppings.Add(topping);
             }
         }
@@ -59,9 +60,35 @@ public partial class Orders : System.Web.UI.Page
             order.size = ddlSize.SelectedValue;
             order.noOfPizzas = Int32.Parse(tbQuantity.Text);
             order.orderDate = DateTime.Now;
-            order.Toppings = selectedToppings;
             ctx.Orders.Add(order);
             ctx.SaveChanges();
         }
+
+        using (MaryPizzaEntities ctx = new MaryPizzaEntities())
+        {
+            foreach (Topping t in selectedToppings)
+            {
+                
+            }
+
+        }
+    }
+    protected void sizeSelected(object sender, EventArgs e)
+    {
+        if (ddlSize.SelectedValue.Equals("Small"))
+        {
+            rbDelivery.Enabled = false;
+            rbDelivery.Checked = false;
+            rbPickup.Checked = true;
+        }
+        else
+        {
+            rbDelivery.Enabled = true;
+        }
+    }
+
+    protected void cvToppings_ServerValidate(object source, ServerValidateEventArgs args)
+    {
+        args.IsValid = lbToppings.SelectedItem != null;
     }
 }
