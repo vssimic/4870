@@ -59,6 +59,20 @@ public partial class Orders : System.Web.UI.Page
             order.orderDate = DateTime.Now;
             ctx.Orders.Add(order);
             ctx.SaveChanges();
+
+            if (!ClientScript.IsClientScriptBlockRegistered("script"))
+            {
+                String str = "Order Submitted!\\n"
+                    + order.lastName + ", " + order.firstname + "\\n"
+                    + "Phone: " + order.phone + "\\n"
+                    + order.email + "\\n"
+                    + "Size: " + order.size + "\\n"
+                    + "Quantity: " + order.noOfPizzas + "\\n"
+                    + order.email + "\\n"
+                    + order.delivery + "\\n";
+
+                ClientScript.RegisterStartupScript(this.GetType(), "script", "<script language = 'javascript'>if(confirm('" + str + "')){ window.location.href = 'Orders.aspx';} else {window.location.href = 'Orders.aspx';}</script>");
+            }
        
         }
 

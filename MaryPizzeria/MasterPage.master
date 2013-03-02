@@ -12,9 +12,8 @@
     <form runat="server">
         <div id="container">
             <div id="loginLink">
-                <%--            <a id="loginA" href="/MaryPizzeria/Login.aspx" style="margin: 0;">Login</a>--%>
                 <asp:LoginStatus ID="LoginStatus" runat="server" LogoutAction="Redirect" LogoutPageUrl="/MaryPizzeria/Default.aspx"/>
-                <asp:LoginName ID="LoginName1" runat="server" />
+                <asp:LoginName ID="LoginName" runat="server" />
             </div>
             <div id="header">
                 <div id="buttons">
@@ -37,6 +36,7 @@
             <asp:ContentPlaceHolder ID="cphContent" runat="server">
             </asp:ContentPlaceHolder>
             <div id="masterFooter">
+                <asp:Label ID="lblFooter" style="margin-left: 200px;" runat="server" Text="Mary Pizza: (123) 456 7890 - We have the best pizza around, we take your satisfaction seriously!" CssClass="lbl"></asp:Label>
             </div>
         </div>
     </form>

@@ -41,7 +41,25 @@ public partial class Admin_Toppings : System.Web.UI.Page
                 ctx.Toppings.Add(topping);
                 ctx.SaveChanges();
                 gvToppings.DataBind();
+                if (!ClientScript.IsClientScriptBlockRegistered("script"))
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "script", "<script language = 'javascript'>alert('Topping successfully created!')</script>");
+
+                }
             }
+        }
+    }
+
+    // The id parameter name should match the DataKeyNames value set on the control
+    public void gvToppings_DeleteItem(int id)
+    {
+        using(MaryPizzaEntities ctx = new MaryPizzaEntities()){
+            Topping topping = (from t in ctx.Toppings
+                               where t.toppingId == id
+                               select t).Single();
+
+            topping.active = "no";
+            ctx.SaveChanges();
         }
     }
 }

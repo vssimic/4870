@@ -1,13 +1,19 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Toppings.aspx.cs" Inherits="Admin_Toppings" %>
+﻿<%@ Page Title="Toppings" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Toppings.aspx.cs" Inherits="Admin_Toppings" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContent" runat="Server">
     <div id="contentToppings">
         <div id="toppingsGridView">
-            <asp:GridView ID="gvToppings" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="toppingId" DataSourceID="edsToppings" ForeColor="Black" GridLines="Horizontal" AllowPaging="True" Height="20px" PageSize="20">
+            <asp:GridView ID="gvToppings" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="toppingId" DataSourceID="edsToppings" ForeColor="Black" GridLines="Horizontal" AllowPaging="True" Height="20px" PageSize="17" AllowSorting="True">
                 <Columns>
-                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:Button ID="Button" runat="server" Text="Delete"
+                                CommandName="Delete" OnClientClick="return confirm('Are you sure?');"></asp:Button>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:CommandField ShowEditButton="True" ShowSelectButton="True" />
                     <asp:BoundField DataField="toppingId" HeaderText="toppingId" ReadOnly="True" SortExpression="toppingId" />
                     <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
                     <asp:BoundField DataField="active" HeaderText="active" SortExpression="active" />
@@ -24,9 +30,9 @@
         </div>
         <div id="toppingFormContainer">
             <div id="toppingForm">
-                <asp:TextBox ID="tbToppingName" runat="server"></asp:TextBox>
-                <asp:Button ID="btnInsert" runat="server" Text="Insert" OnClick="btnInsert_Click" />
-                <asp:RequiredFieldValidator ID="rfvToppingName" runat="server" ErrorMessage="Cannot be empty!" CssClass="err" ControlToValidate="tbToppingName"></asp:RequiredFieldValidator>
+                <asp:TextBox ID="tbToppingName" runat="server" ValidationGroup="insertValidation"></asp:TextBox>
+                <asp:Button ID="btnInsert" runat="server" Text="Insert" OnClick="btnInsert_Click" ValidationGroup="insertValidation"/>
+                <asp:RequiredFieldValidator ID="rfvToppingName" ValidationGroup="insertValidation" runat="server" ErrorMessage="Cannot be empty!" CssClass="err" ControlToValidate="tbToppingName"></asp:RequiredFieldValidator>
             </div>
         </div>
         <asp:EntityDataSource ID="edsToppings" runat="server" ConnectionString="name=MaryPizzaEntities" DefaultContainerName="MaryPizzaEntities" EnableDelete="True" EnableFlattening="False" EnableInsert="True" EnableUpdate="True" EntitySetName="Toppings">
