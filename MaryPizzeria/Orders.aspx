@@ -4,7 +4,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContent" runat="Server">
     <div id="contentOrders">
-        <form runat="server">
             <asp:Table runat="server">
                 <asp:TableRow>
                     <asp:TableCell>
@@ -43,6 +42,7 @@
                     <asp:TableCell>
                         <asp:TextBox ID="tbPhone" runat="server" TextMode="Phone"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Required!" ControlToValidate="tbPhone" CssClass="err"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ControlToValidate="tbPhone" ValidationExpression="(\d{3}).(\d{3}).(\d{4})" runat="server" CssClass="err" ErrorMessage="Required format of 111.222.3333"></asp:RegularExpressionValidator>
                     </asp:TableCell>
                 </asp:TableRow>
 
@@ -93,7 +93,6 @@
                 </asp:TableRow>
             </asp:Table>
             <asp:Button ID="btnOrder" runat="server" Text="Submit Order" OnClick="btnOrder_Click"/>
-        </form>
     </div>
 </asp:Content>
 

@@ -9,35 +9,36 @@
     </asp:ContentPlaceHolder>
 </head>
 <body id="masterBody">
-    <div id="container">
-        <div id="loginLink">
-<%--            <a id="loginA" href="/MaryPizzeria/Login.aspx" style="margin: 0;">Login</a>--%>
-            <form runat="server">
-                <asp:LoginStatus ID="LoginStatus" runat="server" />
-            </form>         
-        </div>
-        <div id="header">
-            <div id="buttons">
-                <a id="btnReports" href="/MaryPizzeria/Sales/Reports.aspx">
-                    <asp:Image ImageUrl="~/images/reports.png" runat="server" BorderStyle="None" ID="imgReports"/>
-                </a>
-                 <a id="btnToppings" href="/MaryPizzeria/Admin/Toppings.aspx">
-                    <asp:Image ImageUrl="~/images/toppingsEdit.png" runat="server" BorderStyle="None" ID="imgToppingsEdit"/>
-                </a>
-                <a id="btnOrder" href="/MaryPizzeria/Orders.aspx">
-                    <asp:Image ImageUrl="~/images/orders.jpg" runat="server" BorderStyle="None" ID="imgOrders"/>
-                </a>
+    <form runat="server">
+        <div id="container">
+            <div id="loginLink">
+                <%--            <a id="loginA" href="/MaryPizzeria/Login.aspx" style="margin: 0;">Login</a>--%>
+                <asp:LoginStatus ID="LoginStatus" runat="server" LogoutAction="Redirect" LogoutPageUrl="/MaryPizzeria/Default.aspx"/>
+                <asp:LoginName ID="LoginName1" runat="server" />
             </div>
-            <div id="homeButton" style="width: 100px; height: 100px">
-                <a id="btnHome" href="/MaryPizzeria/Default.aspx">
-                    <asp:Image ImageUrl="~/images/logo.jpg" runat="server" BorderStyle="None" ID="imgLogo" style ="margin-left: 38px; margin-top: 11px;"/>
-                </a>
+            <div id="header">
+                <div id="buttons">
+                    <a id="btnReports" href="/MaryPizzeria/Sales/Reports.aspx">
+                        <asp:Image ImageUrl="~/images/reports.png" runat="server" BorderStyle="None" ID="imgReports" />
+                    </a>
+                    <a id="btnToppings" href="/MaryPizzeria/Admin/Toppings.aspx">
+                        <asp:Image ImageUrl="~/images/toppingsEdit.png" runat="server" BorderStyle="None" ID="imgToppingsEdit" />
+                    </a>
+                    <a id="btnOrder" href="/MaryPizzeria/Orders.aspx">
+                        <asp:Image ImageUrl="~/images/orders.png" runat="server" BorderStyle="None" ID="imgOrders" />
+                    </a>
+                </div>
+                <div id="homeButton" style="width: 100px; height: 100px">
+                    <a id="btnHome" href="/MaryPizzeria/Default.aspx">
+                        <asp:Image ImageUrl="~/images/logo.jpg" runat="server" BorderStyle="None" ID="imgLogo" />
+                    </a>
+                </div>
+            </div>
+            <asp:ContentPlaceHolder ID="cphContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <div id="masterFooter">
             </div>
         </div>
-        <asp:ContentPlaceHolder ID="cphContent" runat="server">
-        </asp:ContentPlaceHolder>
-        <div id="masterFooter" style="clear: both; width: 1028px; height: 25px; background-color: CaptionText; margin-top: 5px; opacity: .8;">
-        </div>
-    </div>
+    </form>
 </body>
 </html>

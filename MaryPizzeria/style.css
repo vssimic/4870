@@ -8,6 +8,57 @@ color: white;
     font-style:italic;
 }
 
+#imgLogo {
+    margin-left: 38px; 
+    margin-top: 11px;
+}
+
+#masterFooter {
+    clear: both; 
+    width: 1028px; 
+    height: 25px; 
+    background-color: CaptionText; 
+    margin-top: 5px; 
+    opacity: .8;
+}
+
+#loginContainer {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    width: 500px; 
+    height: 300px; 
+    margin-top: -150px; 
+    margin-left: -250px;
+}
+
+#calendars {
+    float: left
+}
+
+#toppingsGridView {
+float: left;
+}
+
+#toppingFormContainer {
+    width: 100%; 
+    height: 99%; 
+    float: right; 
+    width: 715px;
+}
+
+#toppingForm {
+    position: absolute; 
+    top: 50%; 
+    left: 55%;
+}
+
+#divLogin {
+    height: 268px; 
+    width: 497px;  
+    background-color: #d62a2a
+}
+
 #btnLogo {
     padding-left: 40px;
 }

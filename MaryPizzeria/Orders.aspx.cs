@@ -26,19 +26,6 @@ public partial class Orders : System.Web.UI.Page
     }
     protected void btnOrder_Click(object sender, EventArgs e)
     {
-        List<Topping> selectedToppings = new List<Topping>();
-
-        foreach (ListItem item in lbToppings.Items)
-        {
-            if (item.Selected)
-            {
-                Topping topping = new Topping();
-                topping.toppingId = Int32.Parse(item.Value);
-                topping.active = "yes";
-                selectedToppings.Add(topping);
-            }
-        }
-
         string delivery;
         if (rbDelivery.Checked)
         {
@@ -52,6 +39,16 @@ public partial class Orders : System.Web.UI.Page
         using (MaryPizzaEntities ctx = new MaryPizzaEntities())
         {
             Order order = new Order();
+
+            foreach (ListItem item in lbToppings.Items)
+            {
+                if (item.Selected)
+                {
+                    order.Toppings.Add(
+                        ctx.Toppings.Where(t => t.name == item.Text).Select(t => t).First());
+                }
+            }
+
             order.delivery = delivery;
             order.firstname = tbFirst.Text;
             order.lastName = tbLast.Text;
@@ -62,16 +59,9 @@ public partial class Orders : System.Web.UI.Page
             order.orderDate = DateTime.Now;
             ctx.Orders.Add(order);
             ctx.SaveChanges();
+       
         }
 
-        using (MaryPizzaEntities ctx = new MaryPizzaEntities())
-        {
-            foreach (Topping t in selectedToppings)
-            {
-                
-            }
-
-        }
     }
     protected void sizeSelected(object sender, EventArgs e)
     {

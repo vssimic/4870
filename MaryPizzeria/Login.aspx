@@ -8,8 +8,8 @@
 </head>
 <body id="masterBody">
     <form id="form1" runat="server">
-    <div id="loginContainer" style="position: absolute; top: 50%; left: 50%; width: 500px; height: 300px; margin-top: -150px; margin-left: -250px;">
-        <div id="divLogin" style="height: 268px; width: 497px;  background-color: #d62a2a">
+    <div id="loginContainer">
+        <div id="divLogin">
             <asp:Login ID="loginControl" runat="server" Height="268px" Width="497px" CssClass="lbl">
         </asp:Login>
         </div>
